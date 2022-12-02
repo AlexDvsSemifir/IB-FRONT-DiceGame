@@ -8,11 +8,11 @@ export default class Cup {
      */
     get value(): number{
         // Attribut à 0 pour stocker la valeur totale
-        let somme = 0;
-        // On parcourt le tableau de dés et on ajoute la valeur de chaque dé à la somme
-        this._dices.forEach(dice => somme += dice.value);
-        // Et on retourne la somme
-        return somme;
+        let sum = 0;
+        // On parcourt le tableau de dés et on ajoute la valeur de chaque dé à la sum
+        this._dices.forEach(dice => sum += dice.value);
+        // Et on retourne la sum
+        return sum;
     }
 
     /**
@@ -39,8 +39,12 @@ export default class Cup {
      * Lance tous les dés du gobelet.
      */
     rollAllDices(): void {
+        if (this._dices.length > 0) {
         // On parcourt le tableau de dés et on lance chaque dé
         this._dices.forEach(dice => dice.roll());
+        } else {
+            throw new Error("Veuillez ajouter des dés au gobelet !");
+        }
     }
 
     /**
