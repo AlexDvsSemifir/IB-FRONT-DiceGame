@@ -47,6 +47,6 @@ export default class Cup {
      * Affiche des informations sur le score dans la console.
      */
     showScore(): void {
-        console.log(`Score: ${this.value} \n Dices: ${this.values}`);
+        console.log(`Score: ${this.value} \nDices: ${this.values}`);
     }
 }
