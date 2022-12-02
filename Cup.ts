@@ -36,10 +36,17 @@ export default class Cup {
     }
 
     /**
-     * Lance tous les dés du gobelet
+     * Lance tous les dés du gobelet.
      */
     rollAllDices(): void {
         // On parcourt le tableau de dés et on lance chaque dé
         this._dices.forEach(dice => dice.roll());
+    }
+
+    /**
+     * Affiche des informations sur le score dans la console.
+     */
+    showScore(): void {
+        console.log(`Score: ${this.value} \n Dices: ${this.values}`);
     }
 }
