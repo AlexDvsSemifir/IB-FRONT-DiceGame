@@ -1,5 +1,5 @@
 export default class Dice {
-    private _value: number;
+    private _value: number = 1;
 
     public get value(): number {
         return this._value;
