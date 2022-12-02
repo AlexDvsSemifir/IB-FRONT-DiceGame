@@ -3,6 +3,7 @@ import Cup from "./Cup";
 export default class Player {
     private _name: string;
     private _score: number = 0;
+    private _numberOfWinnedTurn: number = 0;
 
     constructor(name: string) {
         this._name = name;
@@ -14,6 +15,10 @@ export default class Player {
 
     get score(): number {
         return this._score;
+    }
+
+    get numberOfWinnedTurn(): number {
+        return this._numberOfWinnedTurn;
     }
 
     /**
@@ -35,8 +40,14 @@ export default class Player {
      */
     showPlayerScore(cup: Cup): void {
         // Affiche l'attribut score du joueur en passant par le getter
-        console.log(`${this.name} Score: ${this.score}`);
-        // Appelle le getter 'values' de l'objet cup pour afficher les valeurs des dés
-        console.log(`${this.name} Dices: ${cup.values}`);
+        console.log(`${this.name} Score: ${this.score} avec  [${cup.values}]`);
+    }
+
+    winTurn(): void {
+        this._numberOfWinnedTurn++;
+    }
+
+    winGame(): void {
+        console.log(`${this.name} a gagné la partie avec ${this._numberOfWinnedTurn} tours gagnés !`);
     }
 }
